@@ -1,6 +1,16 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
-}
+
+function hasTargetSum(arr, target) {
+  const complementMap = {};
+  for (let i = 0; i < arr.length; i++) {
+  const complement = target - arr[i];
+  if (complementMap[complement]) {
+  return true;
+  }
+  complementMap[arr[i]] = true;
+  }
+  return false;
+  }
+
 
 /* 
   Write the Big O time complexity of your function here
@@ -32,3 +42,25 @@ if (require.main === module) {
 }
 
 module.exports = hasTargetSum;
+
+
+
+
+
+
+
+
+  // let result = []
+  // let numIndex = new Map();
+  // for (let i=0; i<array.length; i++){
+  //   let num = arr[i];
+  //   let compliment = target-num;
+  
+  //   if (numIndex.has(compliment)){
+  //     // result = numIndex.get(compliment);
+  //     // result[1] = i;
+  //     // console.log(result[0], result[1])
+  //     return true;  
+  //   }else 
+  //     return false
+  // }
